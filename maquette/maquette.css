@@ -5,10 +5,12 @@ src: url('ToralfontClassic.ttf');
 }
 
 html {
+  height: 100%;
+  width: 100%;
   background: #b99433;
   background: -moz-linear-gradient(45deg, #b99433 0%, #ffd35f 100%);
   background: -webkit-linear-gradient(45deg, #b99433 0%,#ffd35f 100%);
-  background: linear-gradient(45deg, #b99433 0%,#ffd35f 100%);
+  background: linear-gradient(0deg, #b99433 0%,#ffd35f 100%);
 }
 
 body {
@@ -153,8 +155,8 @@ main div img {
 
 footer {
   position: absolute;
-
   left: 0;
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
