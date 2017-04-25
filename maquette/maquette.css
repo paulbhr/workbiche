@@ -1,0 +1,188 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+@font-face {
+font-family: 'Toralfont';
+src: url('ToralfontClassic.ttf');
+}
+
+html {
+  background: #b99433;
+  background: -moz-linear-gradient(45deg, #b99433 0%, #ffd35f 100%);
+  background: -webkit-linear-gradient(45deg, #b99433 0%,#ffd35f 100%);
+  background: linear-gradient(45deg, #b99433 0%,#ffd35f 100%);
+}
+
+body {
+  font-family: 'Helvetica';
+}
+
+h1 {
+  font-family: 'Toralfont';
+}
+
+select {
+  background-color: #3353B9;
+  color: #EEEEEE;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+select:hover {
+  background-color: #EEEEEE;
+  color: #3353B9;
+}
+
+nav {
+  position: fixed;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #13296C;
+  color: #EEEEEE;
+}
+
+nav img {
+  margin: 0px 10px 0px 10px;
+}
+
+nav img:first-of-type {
+  width: 40px;
+  margin-left: 8%;
+}
+
+nav h1 {
+  color: #EEEEEE;
+  margin-right: auto;
+}
+
+nav select {
+  margin-left: auto;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 45px;
+}
+
+main div {
+  position: absolute;
+  width: 275px;
+  height: 300px;;
+}
+
+main h1 {
+  writing-mode: sideways-lr;
+  float: left;
+  padding: 5px;
+}
+
+main div ul {
+  position: absolute;
+  left: 60px;
+  top: 25px;
+  list-style-position: inside;
+}
+
+main div ol {
+  position: absolute;
+  left: 45px;
+  top: 25px;
+  list-style-position: inside;
+}
+
+main div ul li:first-child {
+  color: red;
+}
+
+main div ul li:nth-child(2) {
+  color: green;
+}
+
+main div ul li:nth-child(3) {
+  color: yellow;
+}
+
+
+main div img {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 20px;
+}
+
+#all {
+  z-index: 5;
+  top: 12%;
+  left: 8%;
+  background-color: white;
+}
+
+#category {
+  z-index: 4;
+  top: 13%;
+  left: 50%;
+  background-color: red;
+}
+
+#importance {
+  z-index: 3;
+  top: 16%;
+  left: 47%;
+  background-color: blue;
+}
+
+#time {
+  z-index: 2;
+  top: 18%;
+  left: 44%;
+  background-color: grey;
+}
+
+#more {
+  z-index: 1;
+  top: 20%;
+  left: 41%;
+  background-color: yellow;
+}
+
+footer {
+  position: absolute;
+
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer div {
+  height: 225px;
+  width: 275px;
+  background-color: #247F43;
+  color: #FFD35F;
+  padding: 25px;
+  border-radius: 25px;
+  margin-bottom: 45px;
+  margin-top: 45px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  height: 100px;
+  margin: 15px;
+}
+
+header h1 {
+  font-size: 50px;
+  font-weight: 900;
+}
