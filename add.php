@@ -18,4 +18,4 @@ if(mysqli_query($link, $sql)){
 
 mysqli_close($link);
 
-header('location:index.php');
+header('location:home.php');
