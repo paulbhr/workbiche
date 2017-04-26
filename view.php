@@ -17,15 +17,44 @@
   </nav>
 
   <main>
-  <?php foreach ($todos as $todo): ?>
-    <article>
 
-        <h1><?php echo $todo[1] ?></h1>
+    <article>
+      <?php foreach ($todos as $todo): ?>
+        <h1><?php echo $todo['family'] ?></h1>
 
         <p><?php echo $todo['task'].", durée(heures):".$todo['time'] ?></p>
 
+        <form id="delete" method="post" action="delete.php">
+        <input type="hidden" name="task" value="<?php echo $todo['id']; ?>"/>
+        <input type="submit" name="delete" value="Delete!"/>
+        </form>
+
+      <?php endforeach ?>
     </article>
-  <?php endforeach ?>
+
+    <form action="add.php" method="post">
+      <label>Ajouter une tâche :</label>
+      <input type="text" name="task" value="">
+      <label>Espace de Travail</label>
+      <select name="workspaceid">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+      <label>Famille</label>
+      <input type="text" name="family" value="">
+      <label>Priorité</label>
+      <select name="priority">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <label>Durée</label>
+      <input type="number" name="time" min="0" max="24">
+      <input type="submit">
+    </form>
+
   </main>
 
   <footer>
