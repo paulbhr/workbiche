@@ -9,28 +9,20 @@
   <nav>
     <img src="maquette/logoplaceholder.ico" alt="logo">
     <h1>Work, <?php echo $user[0] ?> !</h1>
-      <select name="utilisateurs">
+    <form action="home.php" method="post">
+      <select method="post" name="space">
       <?php foreach ($workspaces as $workspace) : ?>
         <option value="<?php echo $workspace['id'];?>">
           <?php echo $workspace['name']; ?>
         </option>
       <?php endforeach ?>
       </select>
+      <input type="submit" value="go">
+    </form>
   </nav>
 
   <main>
-    <?php foreach ($todos as $todo): ?>
-        <article class="list">
-        <h1><?php echo $todo['family'] ?></h1>
-
-        <p><?php echo $todo['task'].", durée(heures):".$todo['time'] ?></p>
-
-        <form id="delete" method="post" action="delete.php">
-        <input type="hidden" name="task" value="<?php echo $todo['id']; ?>"/>
-        <input type="submit" name="delete" value="-"/>
-        </form>
-        </article>
-    <?php endforeach ?>
+    <?php require 'workspace.php' ?>
 
 
     <form class="list" action="add.php" method="post">
