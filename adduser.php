@@ -1,15 +1,12 @@
 <?php
 
-$workspaceid = $_POST['workspaceid'];
-$workspacename = $_POST['workspacename'];
-$family = $_POST['family'];
-$task = $_POST['task'];
-$priority = $_POST['priority'];
-$time = $_POST['time'];
+$userpass = $_POST['newuserpass'];
+$username = $_POST['newusername'];
+
 
 $link = mysqli_connect("localhost", "workbiche", "Coucou1$", "workbiche");
 // Attempt insert query execution
-$sql = "INSERT INTO todo (workspaceid, family, task, priority, time) VALUES ('$workspaceid', '$family', '$task', '$priority', '$time')";
+$sql = "INSERT INTO users (name, password) VALUES ('$username', '$userpass')";
 
 if(mysqli_query($link, $sql)){
     echo "Records inserted successfully.";

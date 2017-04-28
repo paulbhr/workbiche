@@ -7,9 +7,9 @@
 </head>
 <body>
   <nav>
-    <img src="maquette/logoplaceholder.ico" alt="logo">
+    <a href="index.php"><img src="maquette/logoplaceholder.ico" alt="logo"></a>
     <h1>Work, <?php echo $user[0] ?> !</h1>
-    <form action="home.php" method="post">
+    <form action="" method="post">
       <select method="post" name="space">
       <?php foreach ($workspaces as $workspace) : ?>
         <option value="<?php echo $workspace['id'];?>">
@@ -19,11 +19,14 @@
       </select>
       <input type="submit" value="go">
     </form>
+    <form action="addspace.php" method="post">
+      <input type="text" name="workspacename" value="" placeholder="Nouvel Espace de Travail :">
+      <input type="submit" value="+">
+    </form>
   </nav>
 
   <main>
     <?php require 'workspace.php' ?>
-
 
     <form class="list" action="add.php" method="post">
       <label>Ajouter une tâche :</label>
@@ -35,7 +38,8 @@
           </option>
         <?php endforeach ?>
       </select>
-      <label>Famille</label>
+      <br>
+      <label>Post-It</label>
       <input type="text" name="family" value="">
       <label>Priorité</label>
       <select name="priority">
@@ -45,6 +49,7 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      <br>
       <label>Durée</label>
       <input type="number" name="time" min="0" max="24">
       <input type="submit" value="+">

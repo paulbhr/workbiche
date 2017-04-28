@@ -14,7 +14,34 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Helvetica';
+}
 
+#index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#index h1 {
+  font-size: 72px;
+}
+
+#index form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+#index label, #index input {
+  padding: 14px;
+}
+
+#index input:last-of-type {
+  font-size: 30px;
+  padding: 5px;
 }
 
 h1 {
@@ -58,6 +85,17 @@ nav img {
 nav h1 {
   color: #EEEEEE;
   margin-right: auto;
+}
+
+nav form:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+nav form select {
+  margin: 0;
 }
 
 main {
