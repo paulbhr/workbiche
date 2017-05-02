@@ -7,8 +7,10 @@
 </head>
 <body>
   <nav>
-    <a href="index.php"><img src="maquette/logoplaceholder.ico" alt="logo"></a>
-    <h1>Work, <?php echo $user[0][1] ?> !</h1>
+    <hello>
+      <a href="index.php"><img src="maquette/logoplaceholder.ico" alt="logo"></a>
+      <h1>Work, <?php echo $user[0][1] ?> !</h1>
+    </hello>
     <form action="" method="post">
       <?php foreach ($workspaces as $workspace) : ?>
         <button name="space" value="<?php echo $workspace['id'];?>">
@@ -23,10 +25,11 @@
   </nav>
 
   <main>
-    <?php require 'workspace.php' ?>
-
-    <form class="list" action="add.php" method="post">
-      <label>Ajouter une tâche :</label>
+    <section>
+      <?php require 'workspace.php' ?>
+    </section>
+    <form class="add" action="add.php" method="post">
+      <h1>Ajouter une tâche :</h1>
       <input type="text" name="task" value="">
       <select name="workspaceid">
         <?php foreach ($workspaces as $workspace) : ?>
@@ -35,9 +38,7 @@
           </option>
         <?php endforeach ?>
       </select>
-      <br>
-      <label>Post-It</label>
-      <input type="text" name="family" value="">
+      <input type="text" name="family" value="" placeholder="Catégorie">
       <label>Priorité</label>
       <select name="priority">
         <option value="1">1</option>
@@ -46,26 +47,30 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <br>
-      <label>Durée</label>
-      <input type="number" name="time" min="0" max="24">
+      <input type="number" name="time" min="0" max="24" placeholder="Durée">
       <input type="submit" value="+">
     </form>
-
+    <form class="remove" action="removespace.php" method="post">
+      <button name="workspace" value="delete">
+        Supprimer cet Espace de Travail
+      </button>
+    </form>
   </main>
 
   <footer>
-    <div id="about">
+    <section>
       <h1>À Propos</h1>
-      <p>Lorem Ipsum etc</p>
-    </div>
-    <header>
+      <p>Simple et intuitif, cet outil vous permet d'organiser vos tâches à venir par catégorie, priorité et temps estimé au sein de divers espaces de travail.</p>
+    </section>
+    <logo>
       <h1>Work</h1><img src="maquette/logoplaceholder.ico"><h1>Biche !</h1>
-    </header>
-    <div id="links">
-      <h1>Liens</h1>
-      <p>Contact, Partage etc</p>
-    </div>
+    </logo>
+    <section>
+      <h1>Font</h1>
+      <p><a href="https://mistifonts.com/youth-and-beauty/">Youth and Beauty</a></p>
+      <h1>Contact</h1>
+      <p><a href="mailto:paulbh.roche@gmail.com">Mail</a> <a href="https://github.com/paulbhr">Github</a></p>
+    </section>
   </footer>
 </body>
 </html>

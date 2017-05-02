@@ -38,8 +38,8 @@ foreach ($fams as $fam): ?>
         ?>
       </p>
       <form id="delete" method="post" action="delete.php">
-        <input type="hidden" name="task" value="<?php echo $todo['id']; ?>"/>
-        <input type="submit" name="delete" value="-"/>
+        <button name="task" value="<?php echo $todo['id']; ?>"/>-
+        </button>
       </form>
     </content>
   <?php endforeach; ?>
