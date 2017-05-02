@@ -8,16 +8,13 @@
 <body>
   <nav>
     <a href="index.php"><img src="maquette/logoplaceholder.ico" alt="logo"></a>
-    <h1>Work, <?php echo $user[0] ?> !</h1>
+    <h1>Work, <?php echo $user[0][1] ?> !</h1>
     <form action="" method="post">
-      <select method="post" name="space">
       <?php foreach ($workspaces as $workspace) : ?>
-        <option value="<?php echo $workspace['id'];?>">
+        <button name="space" value="<?php echo $workspace['id'];?>">
           <?php echo $workspace['name']; ?>
-        </option>
+        </button>
       <?php endforeach ?>
-      </select>
-      <input type="submit" value="go">
     </form>
     <form action="addspace.php" method="post">
       <input type="text" name="workspacename" value="" placeholder="Nouvel Espace de Travail :">

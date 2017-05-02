@@ -1,7 +1,8 @@
 <?php
+$password = 'coucou';
 function getuser() {
   $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $user = $bdd->query('SELECT name FROM users WHERE id=1');
+  $user = $bdd->query("SELECT id, name FROM users WHERE id=1");
   return $user;
 }
 
