@@ -1,19 +1,27 @@
 <?php
-$password = 'coucou';
-function getuser() {
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+function getuser($password) {
   $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $user = $bdd->query("SELECT id, name FROM users WHERE id=1");
+  $user = $bdd->query("SELECT id, name FROM users WHERE password='$password'");
   return $user;
 }
 
-function getworkspaces() {
+function getworkspaces($userid) {
   $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $workspaces = $bdd->query('SELECT * FROM workspaces WHERE userid=1 ORDER BY name ASC');
+  $workspaces = $bdd->query("SELECT id, name FROM workspaces WHERE userid=$userid ORDER BY name ASC");
   return $workspaces;
 }
 
-function getlist() {
+function getfamily($workspace) {
   $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $todos = $bdd->query('SELECT * FROM todo WHERE workspaceid=2 ORDER BY family, priority ASC');
+  $fams = $bdd->query("SELECT DISTINCT family FROM todo WHERE workspaceid=$workspace ORDER BY family ASC");
+  return $fams;
+};
+
+function gettasklist($family) {
+  $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
+  $todos = $bdd->query("SELECT * FROM todo WHERE family='$family' ORDER BY family, priority ASC");
   return $todos;
 };

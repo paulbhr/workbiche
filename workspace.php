@@ -1,30 +1,4 @@
-<?php
-function getfamily($workspace) {
-  $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $fams = $bdd->query("SELECT DISTINCT family FROM todo WHERE workspaceid=$workspace ORDER BY family ASC");
-  return $fams;
-};
-
-function gettasklist($family) {
-  $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $todos = $bdd->query("SELECT * FROM todo WHERE family='$family' ORDER BY family, priority ASC");
-  return $todos;
-};
-
-if(isset($_POST['space'])) {
-  $workspace = $_POST['space'];
-  setcookie('space', $workspace, time()+10000);
-}
-else if(isset($_COOKIE['space'])) {
-  $workspace = $_COOKIE['space'];
-}
-else {
-  $workspace = $workspaces[0]['id'];
-}
-
-$fams = getfamily($workspace)->fetchAll();
-
-foreach ($fams as $fam): ?>
+<?php foreach ($fams as $fam): ?>
   <article class="list">
   <h1><?php echo $fam[0]; ?></h1>
   <?php
@@ -32,11 +6,36 @@ foreach ($fams as $fam): ?>
   foreach ($todos as $todo) :
     ?>
     <content>
-      <p>
+      <?php $string = str_replace(' ', '', $todo['task']); $str = substr($string, 0, 3);?>
+      <p ng-hide="<?php echo $str;?>">
         <?php
-        echo $todo['task'].", durée:".$todo['time'];
+        echo $todo['task']." (".$todo['time']."h)";
         ?>
       </p>
+      <form class="edit" ng-show="<?php echo $str;?>" action="edit.php" method="post">
+        <input type="text" name="task" value="<?php echo $todo['task'] ?>">
+        <select name="workspaceid">
+          <?php foreach ($workspaces as $workspace) : ?>
+            <option value="<?php echo $workspace['id'];?>">
+              <?php echo $workspace['name']; ?>
+            </option>
+          <?php endforeach ?>
+        </select>
+        <input type="text" name="family" value="<?php echo $todo['family'] ?>" placeholder="Catégorie">
+        <label>Priorité</label>
+        <select name="priority">
+          <option value="<?php echo $todo['priority'] ?>"><?php echo $todo['priority'] ?></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label>Durée</label>
+        <input type="number" name="time" min="0" max="24" placeholder="Durée" value="<?php echo $todo['time'] ?>">
+        <button name="submit" value="<?php echo $todo['id'];?>">Edit</button>
+      </form>
+      <button ng-click="<?php echo $str;?>=!<?php echo $str;?>" ng-hide="<?php echo $str;?>">Edit</button>
       <form id="delete" method="post" action="delete.php">
         <button name="task" value="<?php echo $todo['id']; ?>"/>-
         </button>

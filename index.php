@@ -10,7 +10,7 @@
 <body>
 
 <index ng-app="">
-  <h1>Coucou, <br> {{ quiestce }}</h1>
+  <h1>Coucou {{ quiestce }} !</h1>
 
   <form ng-hide="signup" action="home.php" method="post">
     <fieldset>

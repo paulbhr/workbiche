@@ -19,34 +19,36 @@ body {
   flex-direction: column; }
 
 index {
-  width: 40%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   color: #EEEEEE; }
 
 index h1 {
-  width: 100%;
   padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
   margin: 10px;
   font-size: 3em;
   background-color: #13296C;
   border-radius: 5px;
-  text-align: center; }
+  text-align: center;
+  text-transform: capitalize; }
 
 index form {
-  width: 100%;
-  padding: 10px;
+  padding: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
   margin: 10px;
-  background-color: #3353B9;
+  background-color: #2046B8;
   border-radius: 5px;
   color: #EEEEEE; }
 
 index fieldset {
   border: none;
-  width: 100%;
   padding: 5px;
   display: flex;
   justify-content: flex-end;
@@ -59,20 +61,32 @@ index input {
   margin-right: auto; }
 
 index label {
-  flex: 1; }
+  flex: 1;
+  margin-right: auto; }
 
-index label, index input {
+index input {
   padding: 5px; }
 
 index fieldset:first-of-type input:last-of-type {
-  flex: 3.5; }
+  flex: 3; }
 
 index fieldset:last-of-type input:last-of-type {
-  padding: 4px; }
+  padding: 9px;
+  border: none;
+  border-radius: 5px;
+  background: #EEEEEE;
+  color: #13296C;
+  cursor: pointer;
+  margin-left: 5px; }
+
+index fieldset:last-of-type input:last-of-type:hover {
+  color: #EEEEEE;
+  background: #13296C;
+  transition: 0.4s; }
 
 index p {
   text-decoration: underline;
-  color: #3353B9;
+  color: #2046B8;
   cursor: pointer; }
 
 h1 {
@@ -163,15 +177,34 @@ nav form:last-of-type input:last-of-type {
   border-bottom-right-radius: 5px;
   cursor: pointer; }
 
+nav form:last-of-type input:last-of-type:hover {
+  color: #2046B8;
+  background-color: #EEEEEE;
+  transition: 0.4s; }
+
 main {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   padding: 15px; }
 
 main section {
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap; }
+
+main section h1#title {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  align-self: center;
+  text-align: center;
+  font-size: 4em;
+  color: #EEEEEE;
+  background: #B50532; }
 
 main section article {
   margin-right: 5px;
@@ -200,6 +233,9 @@ main section article content {
 main section article p::first-letter {
   text-transform: uppercase; }
 
+main section article p {
+  margin-right: 10px; }
+
 main section button {
   cursor: pointer;
   border: none;
@@ -210,7 +246,24 @@ main section button {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
-  margin-left: 10px; }
+  margin-left: auto;
+  margin-right: 5px; }
+
+main section button:hover {
+  background: #EEEEEE;
+  color: #B50532;
+  transition: 0.4s; }
+
+main section content form:first-of-type input {
+  color: #B50532;
+  width: 100px; }
+
+main section content form:first-of-type input:last-of-type {
+  width: 50px;
+  margin-left: auto; }
+
+main section content form:last-of-type button:last-of-type {
+  margin-right: none; }
 
 main .add {
   width: 100%;
@@ -229,16 +282,37 @@ main .add {
 main .add h1 {
   font-size: 1.8em; }
 
+main .add input {
+  color: #B50532; }
+
+main .add select {
+  cursor: pointer;
+  border: none;
+  color: #B50532;
+  background-color: #EEEEEE;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px; }
+
+main .add select:focus {
+  outline: none; }
+
 main .add input:last-of-type {
   cursor: pointer;
   border: none;
-  color: #B23428;
+  color: #B50532;
   background: #EEEEEE;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
   margin-right: 10px; }
+
+main .add input:last-of-type:hover {
+  color: #EEEEEE;
+  background: #B23428;
+  transition: 0.4s; }
 
 main .remove {
   width: 100%;
@@ -263,6 +337,11 @@ main .remove button {
   padding-right: 10px;
   border-radius: 5px;
   margin-right: 10px; }
+
+main .remove button:hover {
+  background: #B50532;
+  color: #EEEEEE;
+  transition: 0.4s; }
 
 footer {
   position: relative;
