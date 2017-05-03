@@ -10,9 +10,9 @@
   <nav>
     <hello>
       <a href="index.php"><img src="maquette/logoplaceholder.ico" alt="logo"></a>
-      <h1>Work, <?php echo $username ?> !</h1>
+      <h1>Work, <?php echo $_SESSION['username'] ?> !</h1>
     </hello>
-    <form action="" method="post">
+    <form action="home.php" method="post">
       <?php foreach ($workspaces as $workspace) : ?>
         <button name="space" value="<?php echo $workspace['id'];?>">
           <?php echo $workspace['name']; ?>
