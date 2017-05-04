@@ -1,18 +1,11 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8" lang="fr">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work Biche!</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-</head>
+<?php session_start(); ?>
+<?php session_unset(); ?>
+<?php require 'view/head.php' ?>
 <body>
-
 <index ng-app="">
   <h1>Coucou {{ quiestce }} !</h1>
 
-  <form ng-hide="signup" action="home.php" method="post">
+  <form ng-hide="signup" action="model/login.php" method="post">
     <fieldset>
       <label>C'est moi</label>
       <input type="text" name="username" ng-model="quiestce">
@@ -26,7 +19,7 @@
 
   <p ng-click="signup=!signup" ng-hide="signup">Pas encore inscrit ?</p>
 
-  <form ng-show="signup" action="adduser.php" method="post">
+  <form ng-show="signup" action="model/adduser.php" method="post">
     <fieldset>
       <label>Bienvenue</label>
       <input type="text" name="newusername" ng-model="quiestce">
@@ -40,6 +33,6 @@
 
   <p ng-click="signup=!signup" ng-show="signup">Déjà inscrit ?</p>
 </index>
-
+<?php require 'view/footer.php' ?>
 </body>
 </html>

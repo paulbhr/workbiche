@@ -1,41 +1,49 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" lang="fr">
-  <title>Work Biche!</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-</head>
+<?php require 'head.php' ?>
 <body>
   <nav>
     <hello>
-      <a href="index.php"><img src="maquette/logoplaceholder.ico" alt="logo"></a>
-      <h1>Work, <?php echo $_SESSION['username'] ?> !</h1>
+      <a href="./index.php"><img src="./style/logoplaceholder.ico" alt="logo"></a>
+      <h1>Work, <?php echo $username; ?> !</h1>
     </hello>
-    <form action="home.php" method="post">
+    <form action="./model/switchspace.php" method="post">
       <?php foreach ($workspaces as $workspace) : ?>
         <button name="space" value="<?php echo $workspace['id'];?>">
           <?php echo $workspace['name']; ?>
         </button>
-      <?php endforeach ?>
+      <?php endforeach; ?>
     </form>
-    <form action="addspace.php" method="post">
+    <form action="./model/addspace.php" method="post">
+      <input type="hidden" name="userid" value="<?php echo $userid ?>">
       <input type="text" name="workspacename" value="" placeholder="Nouvel Espace de Travail :">
       <input type="submit" value="+">
     </form>
   </nav>
 
   <main ng-app="">
+    <h1 id="title">
+      <?php
+      echo $_SESSION['workspacename'];
+      ;?>
+    </h1>
     <section>
       <?php require 'workspace.php' ?>
     </section>
-    <form class="add" action="add.php" method="post">
+    <form class="add" action="./model/add.php" method="post">
       <h1>Ajouter une tâche :</h1>
       <input type="text" name="task" value="">
       <select name="workspaceid">
-        <?php foreach ($workspaces as $workspace) : ?>
+        <option value="<?php echo $_SESSION['space'];?>">
+          <?php
+          echo $_SESSION['workspacename'];
+          ;?>
+        </option>
+        <?php foreach ($workspaces as $workspace) :
+          if( $workspace['name'] !== $_SESSION['workspacename']) {
+            ?>
           <option value="<?php echo $workspace['id'];?>">
-            <?php echo $workspace['name']; ?>
+            <?php
+              echo $workspace['name'];
+            } ?>
           </option>
         <?php endforeach ?>
       </select>
@@ -51,7 +59,7 @@
       <input type="number" name="time" min="0" max="24" placeholder="Durée">
       <input type="submit" value="+">
     </form>
-    <form class="remove" action="removespace.php" method="post">
+    <form class="remove" action="./model/removespace.php" method="post">
       <?php
       if(isset($_POST['space'])) {
         $workspace = $_POST['space'];
@@ -70,20 +78,6 @@
     </form>
   </main>
 
-  <footer>
-    <section>
-      <h1>À Propos</h1>
-      <p>Simple et intuitif, cet outil vous permet d'organiser vos tâches à venir par catégorie, priorité et temps estimé au sein de divers espaces de travail.</p>
-    </section>
-    <logo>
-      <h1>Work</h1><img src="maquette/logoplaceholder.ico"><h1>Biche !</h1>
-    </logo>
-    <section>
-      <h1>Font</h1>
-      <p><a href="https://mistifonts.com/youth-and-beauty/">Youth and Beauty</a></p>
-      <h1>Contact</h1>
-      <p><a href="mailto:paulbh.roche@gmail.com">Mail</a> <a href="https://github.com/paulbhr">Github</a></p>
-    </section>
-  </footer>
+  <?php require 'footer.php' ?>
 </body>
 </html>

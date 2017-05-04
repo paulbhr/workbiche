@@ -24,7 +24,7 @@ $red: #B50532;
 $redfirstshade: #BE1710;
 $redsecondshade: #B23428;
 
-$yellow: #F5E71F;
+$yellow: #EDC211;
 $yellowfirstshade: #FFF239;
 
 html {
@@ -52,9 +52,8 @@ index {
   }
 
   index h1 {
-    padding: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+    min-width: 95%;
+    padding: 100px;
     margin: 10px;
     font-size: 3em;
     background-color: $blue;
@@ -63,6 +62,7 @@ index {
     text-transform: capitalize;
     }
   index form {
+    min-width: 95%;
     padding: 15px;
     padding-left: 35px;
     padding-right: 35px;
@@ -80,26 +80,25 @@ index {
     flex-wrap: wrap;
   }
   index input {
-    flex: 1;
+    color: $blue;
+    flex: 0;
+    padding: 5px;
     margin-left: auto;
     margin-right: auto;
+    background-color: $white;
+    border: none;
+    border-radius: 5px;
   }
   index label {
     flex: 1;
-    margin-right: auto;
-  }
-index input {
-    padding: 5px;
+    margin-right: 10px;
   }
   index fieldset:first-of-type input:last-of-type {
-    flex: 3;
+    flex: 3.5;
   }
   index fieldset:last-of-type input:last-of-type {
-    padding: 9px;
-    border: none;
-    border-radius: 5px;
-    background: $white;
-    color: $blue;
+    padding-left: 10px;
+    padding-right: 10px;
     cursor: pointer;
     margin-left: 5px;
   }
@@ -131,7 +130,7 @@ nav {
   flex-wrap: wrap;
   background-color: $blue;
   color: $white;
-  }
+}
 
   hello {
     display: flex;
@@ -184,7 +183,7 @@ nav {
     margin-right: 10px;
   }
 
-  nav form:last-of-type input:first-of-type {
+  nav form:last-of-type input:nth-of-type(2) {
     width: 75%;
     color: $blue;
     padding: 10px;
@@ -226,24 +225,20 @@ main {
   padding: 15px;
 }
 
-  main section {
-    padding-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
+  #title {
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 3em;
+    color: $red;
+
   }
 
-  main section h1#title {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    align-self: center;
-    text-align: center;
-    font-size: 4em;
-    color: $white;
-    background: $red;
+  main section {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   main section article {
@@ -301,8 +296,21 @@ main {
     transition: 0.4s;
   }
 
-  main section content form:first-of-type input {
+  main section content form {
     color: $red;
+  }
+
+  main section content form input {
+    color: $red;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+  main section content form:first-of-type input {
     width: 100px;
   }
 
@@ -336,6 +344,12 @@ main {
 
   main .add input {
     color: $red;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: $white;
+    border: none;
+    border-radius: 5px;
   }
 
   main .add select {
