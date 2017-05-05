@@ -24,7 +24,7 @@ $red: #B50532;
 $redfirstshade: #BE1710;
 $redsecondshade: #B23428;
 
-$yellow: #EDC211;
+$yellow: #FEF888;
 $yellowfirstshade: #FFF239;
 
 html {
@@ -96,11 +96,14 @@ index {
   index fieldset:first-of-type input:last-of-type {
     flex: 3.5;
   }
+  index fieldset:last-of-type input:first-of-type {
+    margin-right: 5px;
+  }
   index fieldset:last-of-type input:last-of-type {
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
-    margin-left: 5px;
+    margin-right: auto;
   }
   index fieldset:last-of-type input:last-of-type:hover {
     color: $white;
@@ -111,6 +114,7 @@ index {
     text-decoration: underline;
     color: $bluesecondshade;
     cursor: pointer;
+    margin-bottom: 10px;
   }
 
 h1 {
@@ -381,7 +385,7 @@ main {
 
   main .add input:last-of-type:hover {
     color: $white;
-    background: $redsecondshade;
+    background: $red;
     transition: 0.4s;
   }
 
@@ -403,7 +407,7 @@ main {
     border: none;
     color: $red;
     font-weight: bold;
-    background: $white;
+    background: $yellow;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -413,7 +417,7 @@ main {
 
   main .remove button:hover {
     background: $red;
-    color: $white;
+    color: $yellow;
     transition: 0.4s;
   }
 

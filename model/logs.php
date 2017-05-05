@@ -1,10 +1,7 @@
 <?php
 session_start();
-$password = $_SESSION['password'];
-$user = getuser($password)->fetch();
 
-$_SESSION['userid'] = $user['id'];
-$_SESSION['username'] = $user['name'];
+$userid = $_SESSION['userid'];
 $username = $_SESSION['username'];
 
 $workspaces = getworkspaces($_SESSION['userid'])->fetchAll();
@@ -18,7 +15,15 @@ else {
 }
 
 $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-$workspacename = $bdd->query("SELECT name FROM workspaces WHERE id=$workspace")->fetch();
-$_SESSION['workspacename'] = $workspacename['name'];
+if($workspace != null) {
+  $workspacename = $bdd->query("SELECT name FROM workspaces WHERE id=$workspace")->fetch();
+  $_SESSION['workspacename'] = $workspacename['name'];
+}
+else {
+  $workspacename = "Ajoute un Espace de Travail!";
+  $_SESSION['workspacename'] = $workspacename;
+}
 
-$fams = getfamily($workspace)->fetchAll();
+if($workspace != null) {
+  $fams = getfamily($workspace)->fetchAll();
+}

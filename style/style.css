@@ -72,11 +72,14 @@ index label {
 index fieldset:first-of-type input:last-of-type {
   flex: 3.5; }
 
+index fieldset:last-of-type input:first-of-type {
+  margin-right: 5px; }
+
 index fieldset:last-of-type input:last-of-type {
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
-  margin-left: 5px; }
+  margin-right: auto; }
 
 index fieldset:last-of-type input:last-of-type:hover {
   color: #EEEEEE;
@@ -86,7 +89,8 @@ index fieldset:last-of-type input:last-of-type:hover {
 index p {
   text-decoration: underline;
   color: #2046B8;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-bottom: 10px; }
 
 h1 {
   font-family: 'Toralfont'; }
@@ -322,7 +326,7 @@ main .add input:last-of-type {
 
 main .add input:last-of-type:hover {
   color: #EEEEEE;
-  background: #B23428;
+  background: #B50532;
   transition: 0.4s; }
 
 main .remove {
@@ -330,7 +334,7 @@ main .remove {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: #EDC211;
+  background-color: #FEF888;
   border-radius: 5px;
   margin-top: 5px;
   padding: 5px;
@@ -342,7 +346,7 @@ main .remove button {
   border: none;
   color: #B50532;
   font-weight: bold;
-  background: #EEEEEE;
+  background: #FEF888;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -351,7 +355,7 @@ main .remove button {
 
 main .remove button:hover {
   background: #B50532;
-  color: #EEEEEE;
+  color: #FEF888;
   transition: 0.4s; }
 
 footer {

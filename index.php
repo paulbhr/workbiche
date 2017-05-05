@@ -5,7 +5,7 @@
 <index ng-app="">
   <h1>Coucou {{ quiestce }} !</h1>
 
-  <form ng-hide="signup" action="model/login.php" method="post">
+  <form ng-hide="signup" action="home.php" method="post">
     <fieldset>
       <label>C'est moi</label>
       <input type="text" name="username" ng-model="quiestce">
