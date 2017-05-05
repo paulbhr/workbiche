@@ -7,7 +7,9 @@ $priority = $_POST['priority'];
 $time = $_POST['time'];
 $id = $_POST['submit'];
 
+var_dump($_POST);
+
 $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-$sql = $bdd->query("UPDATE todo SET workspaceid='$workspaceid', family='$family', task='$task', priority='$priority', time='$time' WHERE id='$id'");
+$sql = $bdd->query("UPDATE todo SET workspaceid=$workspaceid, family='$family', task='$task', priority=$priority, time=$time WHERE id=$id");
 
 header('location:../home.php');

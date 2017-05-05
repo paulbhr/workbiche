@@ -5,6 +5,9 @@ $workspacename = $_POST['workspacename'];
 $family = $_POST['family'];
 $task = $_POST['task'];
 $priority = $_POST['priority'];
+if ($_POST['time'] == "") {
+  $_POST['time'] = "0";
+}
 $time = $_POST['time'];
 
 $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');

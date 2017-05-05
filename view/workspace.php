@@ -12,13 +12,16 @@
       ?>
       <p ng-hide="<?php echo $str;?>">
         <?php
-        echo $todo['task']." (".$todo['time']."h)";
+        echo $todo['task']." ";
+        if($todo['time'] !== "0") {
+          echo "(".$todo['time']."h)";
+        }
         ?>
       </p>
       <form class="edit" ng-show="<?php echo $str;?>" action="./model/edit.php" method="post">
         <input type="text" name="task" value="<?php echo $todo['task'] ?>">
         <select name="workspaceid">
-          <option>
+          <option value="<?php echo $_SESSION['space'];?>">
             <?php
             echo $_SESSION['workspacename'];
             ;?>
