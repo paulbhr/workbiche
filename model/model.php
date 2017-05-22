@@ -18,8 +18,8 @@ function getfamily($workspace) {
   return $fams;
 };
 
-function gettasklist($family) {
+function gettasklist($family, $workspaceid) {
   $bdd = new PDO('mysql:host=localhost;dbname=workbiche;charset=utf8', 'workbiche', 'Coucou1$');
-  $todos = $bdd->query("SELECT * FROM todo WHERE family='$family' ORDER BY family, priority ASC");
+  $todos = $bdd->query("SELECT * FROM todo WHERE family='$family' AND workspaceid=$workspaceid ORDER BY family, priority ASC");
   return $todos;
 };

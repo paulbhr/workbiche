@@ -3,7 +3,7 @@
   <article class="list">
   <h1><?php echo $fam[0]; ?></h1>
   <?php
-  $todos = gettasklist($fam[0])->fetchAll();
+  $todos = gettasklist($fam[0], $_SESSION['space'])->fetchAll();
   foreach ($todos as $todo) :
     ?>
     <content>

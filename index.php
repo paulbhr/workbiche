@@ -3,7 +3,8 @@
 <?php require 'view/head.php' ?>
 <body>
 <index ng-app="">
-  <h1>Coucou {{ quiestce }} !</h1>
+
+  <h1><img src="style/logo.png" height="200px"><br>Coucou {{ quiestce }} !</h1>
 
   <form ng-hide="signup" action="home.php" method="post">
     <fieldset>

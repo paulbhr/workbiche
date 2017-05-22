@@ -172,6 +172,16 @@ nav {
     transition: 0.4s;
   }
 
+  nav button.actual {
+    background-color: $red;
+  }
+
+  nav button.actual:hover {
+    color: $red;
+    background-color: $white;
+    transition: 0.4s;
+  }
+
   nav form:first-of-type {
     display: flex;
     align-items: center;

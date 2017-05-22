@@ -140,6 +140,14 @@ nav button:hover {
   background-color: #EEEEEE;
   transition: 0.4s; }
 
+nav button.actual {
+  background-color: #B50532; }
+
+nav button.actual:hover {
+  color: #B50532;
+  background-color: #EEEEEE;
+  transition: 0.4s; }
+
 nav form:first-of-type {
   display: flex;
   align-items: center;

@@ -4,7 +4,7 @@
     <p>Simple et intuitif, cet outil vous permet d'organiser vos tâches à venir par catégorie, priorité et temps estimé au sein de divers espaces de travail.</p>
   </section>
   <logo>
-    <h1>Work</h1><img src="./style/logoplaceholder.ico"><h1>Biche !</h1>
+    <img src="./style/logobannw.png">
   </logo>
   <section>
     <h1>Font</h1>
